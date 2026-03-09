@@ -81,9 +81,9 @@ if (!ErrorLevel) {
             ToolTip, BRANCO em X=%BrancoX% | Verde [%LimiteEsq% - %LimiteDrt%]
 
             if (BrancoX >= LimiteEsq && BrancoX <= LimiteDrt) {
-                SendInput, {1 down}
-                DllCall("Sleep", "UInt", 50)
-                SendInput, {1 up}
+                Send, {1 down}
+                Sleep, 80
+                Send, {1 up}
                 
                 ToolTip, PESCA PERFEITA! (Branco em %BrancoX% / Verde %Gx%-%GxFim%)
                 Sleep, 3000
