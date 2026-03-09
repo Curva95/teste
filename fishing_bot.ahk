@@ -81,9 +81,19 @@ if (!ErrorLevel) {
             ToolTip, BRANCO em X=%BrancoX% | Verde [%LimiteEsq% - %LimiteDrt%]
 
             if (BrancoX >= LimiteEsq && BrancoX <= LimiteDrt) {
-                Send, {1 down}
-                Sleep, 80
-                Send, {1 up}
+                SoundBeep, 1000, 100  ; Beep para confirmar que chegou aqui
+                ToolTip, A CLICAR TECLA 1...
+                Sleep, 50
+                
+                ; Garante que o jogo tem foco
+                WinGetActiveTitle, JanelaAtiva
+                ToolTip, Janela ativa: %JanelaAtiva%
+                Sleep, 100
+                
+                ; Tenta múltiplos métodos de envio
+                Send, {1}
+                Sleep, 50
+                SendEvent, {1}
                 
                 ToolTip, PESCA PERFEITA! (Branco em %BrancoX% / Verde %Gx%-%GxFim%)
                 Sleep, 3000
